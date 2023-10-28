@@ -13,7 +13,7 @@
 #SBATCH -e rplhighpass-sort-slurm.%N.%j.err # STDERR
 
 # LOAD MODULES, INSERT CODE, AND RUN YOUR PROGRAMS HERE
-data/miniconda3/bin/conda init
+/data/miniconda3/bin/conda init
 source ~/.bashrc
 envarg=`/data/src/PyHipp/envlist.py`
 conda activate $envarg
@@ -27,5 +27,5 @@ from PyHipp import export_mountain_cells; \
 export_mountain_cells.export_mountain_cells(); \
 print(time.localtime());"
 
-conda deactivate 
+conda deactivate
 /data/src/PyHipp/envlist.py $envarg
